@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Genpad", "Genpad\Genpad.csproj", "{A352FD3E-2F26-4734-A856-3391F549F17F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A352FD3E-2F26-4734-A856-3391F549F17F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A352FD3E-2F26-4734-A856-3391F549F17F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A352FD3E-2F26-4734-A856-3391F549F17F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A352FD3E-2F26-4734-A856-3391F549F17F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A1C95E3F-EF55-4B58-9B59-B252959A6609}
+	EndGlobalSection
+EndGlobal
