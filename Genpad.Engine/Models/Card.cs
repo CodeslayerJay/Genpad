@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Genpad.Engine.Models
 {
-    public class Card
+    public class Card : ICard
     {
         public int Id { get; set; }
         public string Title { get; set; }
