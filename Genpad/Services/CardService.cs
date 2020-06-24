@@ -49,8 +49,13 @@ namespace Genpad.Services
 
         private CardExtended GetCardAsExtended(Card cardToExtend)
         {
-            CardExtended cardExtended = cardToExtend as CardExtended;
-            cardExtended.UserId = "TESTING123";
+            CardExtended cardExtended = new CardExtended
+            {
+                UserId = "TESTING123",
+                CreatedAt = cardToExtend.CreatedAt,
+                Title = cardToExtend.Title,
+                Note = cardToExtend.Note
+            };
 
             return cardExtended;
         }
