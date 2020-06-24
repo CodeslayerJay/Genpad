@@ -23,6 +23,7 @@ namespace Genpad.Data.DbRules
 
             entity.Property(q => q.Title).IsRequired(true).HasMaxLength(CardRules.TITLE_ALLOWED_LENGTH);
             entity.Property(q => q.Note).IsRequired(true).HasMaxLength(CardRules.NOTE_ALLOWED_LENGTH);
+            entity.Property(q => q.CreatedAt).IsRequired(true).ValueGeneratedOnAdd();
         }
     }
 }
