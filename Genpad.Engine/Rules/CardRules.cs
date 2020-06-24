@@ -9,9 +9,9 @@ namespace Genpad.Engine.Rules
     {
         public RuleResult RuleResult { get; }
         private Card _cardToTest;
-        private const int NOTE_ALLOWED_LENGTH = 1000;
-        private const int TITLE_ALLOWED_LENGTH = 100;
-
+        public const int NOTE_ALLOWED_LENGTH = 1000;
+        public const int TITLE_ALLOWED_LENGTH = 100;
+        
         public CardRules(Card cardToTest)
         {
             RuleResult = new RuleResult();
@@ -19,7 +19,7 @@ namespace Genpad.Engine.Rules
 
             IsValid();
         }
-
+        
         public bool IsValid()
         {
             return IsValid(_cardToTest);
