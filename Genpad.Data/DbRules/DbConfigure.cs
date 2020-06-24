@@ -1,4 +1,5 @@
-﻿using Genpad.Engine.Models;
+﻿using Genpad.Data.DataModels;
+using Genpad.Engine.Models;
 using Genpad.Engine.Rules;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -19,8 +20,9 @@ namespace Genpad.Data.DbRules
 
         private static void ConfigureCard()
         {
-            var entity = _modelBuilder.Entity<Card>();
+            var entity = _modelBuilder.Entity<CardExtended>();
 
+            entity.Property(q => q.UserId).IsRequired(true);
             entity.Property(q => q.Title).IsRequired(true).HasMaxLength(CardRules.TITLE_ALLOWED_LENGTH);
             entity.Property(q => q.Note).IsRequired(true).HasMaxLength(CardRules.NOTE_ALLOWED_LENGTH);
             entity.Property(q => q.CreatedAt).IsRequired(true).ValueGeneratedOnAdd();

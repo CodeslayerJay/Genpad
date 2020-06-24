@@ -1,4 +1,6 @@
+using AutoMapper;
 using Genpad.Data;
+using Genpad.Helpers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -23,7 +25,7 @@ namespace Genpad
         public void ConfigureServices(IServiceCollection services)
         {
 
-
+            services.AddAutoMapper(typeof(MappingProfile));
 
             services.AddDbContext<DataContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("GenpadLocal")));

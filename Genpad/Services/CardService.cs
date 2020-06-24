@@ -1,4 +1,6 @@
-﻿using Genpad.Engine.Models;
+﻿using AutoMapper;
+using Genpad.DTOs;
+using Genpad.Engine.Models;
 using Genpad.Engine.Rules;
 using Genpad.Engine.Types;
 using System;
@@ -9,9 +11,16 @@ namespace Genpad.Services
 {
     public class CardService
     {
-        public ICommandResult AddCard(Card card)
+        private readonly IMapper _mapper;
+
+        public CardService(IMapper mapper)
         {
-            var cardRules = new CardRules(card);
+            _mapper = mapper;
+        }
+
+        public ICommandResult AddCard(CardDTO cardToAdd)
+        {
+            var cardRules = new CardRules(_mapper.Map<Card>(cardToAdd));
 
             if (cardRules.IsValid() == false)
                 return cardRules.RuleResult;
