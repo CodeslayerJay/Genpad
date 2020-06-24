@@ -1,6 +1,7 @@
 using AutoMapper;
 using Genpad.Data;
 using Genpad.Helpers;
+using Genpad.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -24,7 +25,7 @@ namespace Genpad
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddScoped<ICardService, CardService>();
             services.AddAutoMapper(typeof(MappingProfile));
 
             services.AddDbContext<DataContext>(options =>

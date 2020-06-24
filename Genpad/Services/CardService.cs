@@ -8,10 +8,11 @@ using Genpad.Engine.Types;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Genpad.Services
 {
-    public class CardService
+    public class CardService : ICardService
     {
         private readonly IMapper _mapper;
         private readonly DataContext _dataContext;
@@ -22,7 +23,7 @@ namespace Genpad.Services
             _dataContext = dataContext;
         }
 
-        public ICommandResult AddCard(CardDTO cardToAdd)
+        public async Task<ICommandResult> AddCard(CardDTO cardToAdd)
         {
             var card = MapToCard(cardToAdd);
             var ruleResult = ValidateCard(card);
@@ -30,7 +31,7 @@ namespace Genpad.Services
                 return ruleResult;
 
             _dataContext.Cards.Add(GetCardAsExtended(card));
-            _dataContext.SaveChanges();
+            await _dataContext.SaveChangesAsync();
 
             return ruleResult;
         }
@@ -45,7 +46,7 @@ namespace Genpad.Services
             var cardRules = new CardRules(cardToValidate);
             return cardRules.RuleResult;
         }
-        
+
         private CardExtended GetCardAsExtended(Card cardToExtend)
         {
             CardExtended cardExtended = cardToExtend as CardExtended;
