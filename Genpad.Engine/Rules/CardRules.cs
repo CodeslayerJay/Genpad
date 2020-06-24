@@ -7,14 +7,14 @@ namespace Genpad.Engine.Rules
 {
     public class CardRules
     {
-        private readonly RuleResult _ruleResult;
+        public RuleResult RuleResult { get; }
         private Card _cardToTest;
         private const int NOTE_ALLOWED_LENGTH = 1000;
         private const int TITLE_ALLOWED_LENGTH = 100;
 
         public CardRules(Card cardToTest)
         {
-            _ruleResult = new RuleResult();
+            RuleResult = new RuleResult();
             _cardToTest = cardToTest;
 
             IsValid();
@@ -35,19 +35,19 @@ namespace Genpad.Engine.Rules
             CheckNoteIsNullOrEmpty();
             CheckNoteIsGreaterThanOrEqualToAllowedLength();
 
-            return _ruleResult.IsValid();
+            return RuleResult.IsValid();
         }
 
         private void CheckCardIsNull()
         {
-            if (_cardToTest == null) _ruleResult.AddError("Card", "Card cannot be null.");
+            if (_cardToTest == null) RuleResult.AddError("Card", "Card cannot be null.");
         }
 
         private void CheckTitleIsNullOrEmpty()
         {
             if(_cardToTest != null && String.IsNullOrEmpty(_cardToTest.Title)) 
             {
-                _ruleResult.AddError("Title", "Title cannot be null or empty.");
+                RuleResult.AddError("Title", "Title cannot be null or empty.");
             }
             
         }
@@ -56,7 +56,7 @@ namespace Genpad.Engine.Rules
         {
             if (_cardToTest != null && String.IsNullOrEmpty(_cardToTest.Title) == false)
             {
-                if (_cardToTest.Title.Length >= TITLE_ALLOWED_LENGTH) _ruleResult.AddError("Title", $"Title has to be less than or equal to {TITLE_ALLOWED_LENGTH}.");
+                if (_cardToTest.Title.Length >= TITLE_ALLOWED_LENGTH) RuleResult.AddError("Title", $"Title has to be less than or equal to {TITLE_ALLOWED_LENGTH}.");
             }
 
         }
@@ -65,7 +65,7 @@ namespace Genpad.Engine.Rules
         {
             if (_cardToTest != null && String.IsNullOrEmpty(_cardToTest.Note))
             {
-                _ruleResult.AddError("Note", "Note cannot be null or empty.");
+                RuleResult.AddError("Note", "Note cannot be null or empty.");
             }
 
         }
@@ -74,7 +74,7 @@ namespace Genpad.Engine.Rules
         {
             if (_cardToTest != null && String.IsNullOrEmpty(_cardToTest.Note) == false)
             {
-                if (_cardToTest.Note.Length >= NOTE_ALLOWED_LENGTH) _ruleResult.AddError("Note", $"Note has to be less than or equal to {NOTE_ALLOWED_LENGTH}.");
+                if (_cardToTest.Note.Length >= NOTE_ALLOWED_LENGTH) RuleResult.AddError("Note", $"Note has to be less than or equal to {NOTE_ALLOWED_LENGTH}.");
             }
 
         }
