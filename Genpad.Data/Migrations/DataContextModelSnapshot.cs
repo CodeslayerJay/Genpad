@@ -19,7 +19,7 @@ namespace Genpad.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Genpad.Data.DataModels.CardExtended", b =>
+            modelBuilder.Entity("Genpad.Data.DTO.CardDTO", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

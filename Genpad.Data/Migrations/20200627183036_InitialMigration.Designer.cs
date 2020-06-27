@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Genpad.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20200624024308_InitialMigration")]
+    [Migration("20200627183036_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,7 +21,7 @@ namespace Genpad.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Genpad.Data.DataModels.CardExtended", b =>
+            modelBuilder.Entity("Genpad.Data.DTO.CardDTO", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

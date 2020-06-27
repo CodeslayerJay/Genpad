@@ -1,4 +1,4 @@
-﻿using Genpad.Data.DbRules;
+﻿using Genpad.Data.DbConfig;
 using Genpad.Data.DTO;
 using Genpad.Engine.Models;
 using Microsoft.EntityFrameworkCore;

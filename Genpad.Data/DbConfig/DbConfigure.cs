@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Genpad.Data.DbRules
+namespace Genpad.Data.DbConfig
 {
     public static class DbConfigure
     {
