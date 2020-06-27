@@ -3,17 +3,16 @@ using Genpad.Data.DTO;
 using Genpad.Engine.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 
-namespace Genpad.Helpers
+namespace Genpad.Services.Configurations
 {
-    public class MappingProfile : Profile
+    internal class MappingProfile : Profile
     {
         public MappingProfile()
         {
-            CreateMap<CardDTO, Card>();
             CreateMap<Card, CardDTO>();
+            CreateMap<CardDTO, Card>();
         }
     }
 }

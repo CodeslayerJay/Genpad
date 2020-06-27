@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 using Genpad.Data;
-using Genpad.Data.DataModels;
-using Genpad.DTOs;
+using Genpad.Data.DTO;
 using Genpad.Engine.Models;
 using Genpad.Engine.Rules;
 using Genpad.Engine.Types;
+using Genpad.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,15 +12,15 @@ using System.Threading.Tasks;
 
 namespace Genpad.Services
 {
-    public class CardService : ICardService
+    public class CardService : ServiceBase, ICardService
     {
-        private readonly IMapper _mapper;
+        
         private readonly DataContext _dataContext;
 
-        public CardService(IMapper mapper, DataContext dataContext)
+        public CardService(DataContext dataContext)
         {
-            _mapper = mapper;
             _dataContext = dataContext;
+            
         }
 
         public async Task<ICommandResult> AddCard(CardDTO cardToAdd)
@@ -30,7 +30,7 @@ namespace Genpad.Services
             if (ruleResult.IsValid() == false)
                 return ruleResult;
 
-            _dataContext.Cards.Add(GetCardAsExtended(card));
+            _dataContext.Cards.Add(GetCardDTO(card));
             await _dataContext.SaveChangesAsync();
 
             return ruleResult;
@@ -38,7 +38,7 @@ namespace Genpad.Services
 
         private Card MapToCard(CardDTO cardToMap)
         {
-            return _mapper.Map<Card>(cardToMap);
+            return Mapper.Map<Card>(cardToMap);
         }
 
         private ICommandResult ValidateCard(Card cardToValidate)
@@ -47,17 +47,17 @@ namespace Genpad.Services
             return cardRules.RuleResult;
         }
 
-        private CardExtended GetCardAsExtended(Card cardToExtend)
+        private CardDTO GetCardDTO(Card card)
         {
-            CardExtended cardExtended = new CardExtended
+            CardDTO cardDTO = new CardDTO
             {
                 UserId = "TESTING123",
-                CreatedAt = cardToExtend.CreatedAt,
-                Title = cardToExtend.Title,
-                Note = cardToExtend.Note
+                CreatedAt = card.CreatedAt,
+                Title = card.Title,
+                Note = card.Note
             };
 
-            return cardExtended;
+            return cardDTO;
         }
     }
 }

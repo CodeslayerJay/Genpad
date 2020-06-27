@@ -1,8 +1,9 @@
-﻿using Genpad.DTOs;
+﻿
+using Genpad.Data.DTO;
 using Genpad.Engine.Types;
 using System.Threading.Tasks;
 
-namespace Genpad.Services
+namespace Genpad.Services.Interfaces
 {
     public interface ICardService
     {

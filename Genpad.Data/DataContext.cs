@@ -1,5 +1,5 @@
-﻿using Genpad.Data.DataModels;
-using Genpad.Data.DbRules;
+﻿using Genpad.Data.DbRules;
+using Genpad.Data.DTO;
 using Genpad.Engine.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -13,7 +13,7 @@ namespace Genpad.Data
         public DataContext(DbContextOptions<DataContext> options) :base(options)
         { }
 
-        public DbSet<CardExtended> Cards { get; set; }
+        public DbSet<CardDTO> Cards { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

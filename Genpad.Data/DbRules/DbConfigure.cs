@@ -1,4 +1,4 @@
-﻿using Genpad.Data.DataModels;
+﻿using Genpad.Data.DTO;
 using Genpad.Engine.Models;
 using Genpad.Engine.Rules;
 using Microsoft.EntityFrameworkCore;
@@ -20,7 +20,7 @@ namespace Genpad.Data.DbRules
 
         private static void ConfigureCard()
         {
-            var entity = _modelBuilder.Entity<CardExtended>();
+            var entity = _modelBuilder.Entity<CardDTO>();
 
             entity.Property(q => q.UserId).IsRequired(true);
             entity.Property(q => q.Title).IsRequired(true).HasMaxLength(CardRules.TITLE_ALLOWED_LENGTH);

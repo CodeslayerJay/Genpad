@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+//import * as bootstrap from "bootstrap"; 
+import * as $ from "jquery";
 
 @Component({
   selector: 'app-nav-menu',
@@ -14,5 +16,9 @@ export class NavMenuComponent {
 
   toggle() {
     this.isExpanded = !this.isExpanded;
+  }
+
+  openForm() {
+    $('#cardFormModal').modal("show");
   }
 }

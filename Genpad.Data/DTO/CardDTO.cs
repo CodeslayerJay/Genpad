@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Genpad.Data.DataModels
+namespace Genpad.Data.DTO
 {
-    public class CardExtended : Card
+    public class CardDTO : Card
     {
         public string UserId { get; set; }
     }
