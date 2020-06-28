@@ -9,11 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Genpad.Tests", "Genpad.Test
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Genpad.Data", "Genpad.Data\Genpad.Data.csproj", "{57B0D7E5-A55B-45A1-AFC3-D730CC256A78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Genpad.Services", "Genpad.Services\Genpad.Services.csproj", "{0DB1CF83-AB13-4530-A758-75DA4F1127D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Genpad.Services", "Genpad.Services\Genpad.Services.csproj", "{0DB1CF83-AB13-4530-A758-75DA4F1127D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Genpad.API", "Genpad.API\Genpad.API.csproj", "{785E2F4B-206D-48A1-B7F9-A9C2D5C2E954}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Genpad.API", "Genpad.API\Genpad.API.csproj", "{785E2F4B-206D-48A1-B7F9-A9C2D5C2E954}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Genpad.UI", "Genpad.UI\Genpad.UI.csproj", "{47CFD2FA-702C-4EE3-8DE6-F5D909119C84}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Genpad.VueUI", "Genpad.VueUI\Genpad.VueUI.csproj", "{443524BC-536E-4F72-97B9-B56619070AD4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,10 @@ Global
 		{785E2F4B-206D-48A1-B7F9-A9C2D5C2E954}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{785E2F4B-206D-48A1-B7F9-A9C2D5C2E954}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{785E2F4B-206D-48A1-B7F9-A9C2D5C2E954}.Release|Any CPU.Build.0 = Release|Any CPU
-		{47CFD2FA-702C-4EE3-8DE6-F5D909119C84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{47CFD2FA-702C-4EE3-8DE6-F5D909119C84}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{47CFD2FA-702C-4EE3-8DE6-F5D909119C84}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{47CFD2FA-702C-4EE3-8DE6-F5D909119C84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{443524BC-536E-4F72-97B9-B56619070AD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{443524BC-536E-4F72-97B9-B56619070AD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{443524BC-536E-4F72-97B9-B56619070AD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{443524BC-536E-4F72-97B9-B56619070AD4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
