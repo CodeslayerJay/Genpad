@@ -1,0 +1,73 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+
+#page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 1000px;
+    width: 100%;
+    z-index: 999999;
+    background-color: #5bc0de;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+}
+
+.roboto-bold {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+}
+
+.roboto-regular {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 400;
+}
+
+.roboto-light {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 300;
+}
+
+#page-loader-title {
+    text-align: center;
+    -webkit-animation: scale-up-center 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) infinite both;
+    animation: scale-up-center 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) infinite both;
+}
+
+main {
+    padding-top: 80px;
+}
+
+footer {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+@-webkit-keyframes scale-up-center {
+    0% {
+        -webkit-transform: scale(0.75);
+        transform: scale(0.75);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes scale-up-center {
+    0% {
+        -webkit-transform: scale(0.75);
+        transform: scale(0.75);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}

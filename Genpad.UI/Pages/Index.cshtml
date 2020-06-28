@@ -1,0 +1,46 @@
+﻿@page
+
+    <div data-bind="with: home">
+
+        <div class="jumbotron">
+            <h1 class="display-3">Hello!</h1>
+            <p class="lead">Welcome, this is a simplistic note app.</p>
+            <hr class="my-4">
+            <p>Try it out or sign up for a free account.</p>
+            <p class="lead">
+                <button class="btn btn-secondary btn-lg" data-bind="click: openNoteModal">Try It Out</button>
+                <a class="btn btn-primary btn-lg" href="#" role="button">Sign Up</a>
+            </p>
+        </div>
+
+
+
+        <div class="modal fade" id="noteFormModal">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Note</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Modal body text goes here.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+@section Scripts {
+    <script type="text/javascript">
+        require(['app', 'components/home'], function (app, home) {
+            app.initialize(home,"home");
+        });
+    </script>
+}
